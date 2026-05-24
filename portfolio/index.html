@@ -3,114 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TM Portfolio</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- Header section with logo and navigation links -->
-    <header>
+    <nav id="desktop-nav">
+      <div class="logo">Tee Portfolio</div>
       <div>
-        <h1>Tee Portfolio</h1>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
+        <ul class="nav-links">
+          <li><a href="#profile">Home</a></li>
           <li><a href="#about">About me</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
 
-    <!-- Main content area for all website sections -->
+    <nav id="hamburger-nav">
+      <div class="logo">Tee Portfolio</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu-links">
+          <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
+          <li><a href="#about" onclick="toggleMenu()">About me</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main>
-      <!-- Home section with a welcome message and introduction video -->
-      <section id="home">
-        <h2>Portfolio</h2>
-        <p>
-          Hello, I am Thapelo M. This is my beginner friendly portfolio website
-          built using plain HTML only.
-        </p>
+      <section id="profile">
+        <div class="section__pic-container">
+          <img src="assets/image.png" alt="Thapelo Mthize profile picture" />
+        </div>
 
-        <video width="700" height="300" controls autoplay loop muted>
-          <source src="assets/code-edit.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div class="section__text">
+          <p class="section__text__p1">Hello, I’m</p>
+          <h1 class="title">Thapelo Mthize</h1>
+          <p class="section__text__p2">Web Developer</p>
+
+          <div class="btn-container">
+            <button class="btn btn-color-2">Download CV</button>
+            <button class="btn btn-color-1" onclick="location.href='#contact'">
+              Contact Me
+            </button>
+          </div>
+
+          <div id="socials-container">
+            <a href="https://www.linkedin.com/in/thapelomthize" target="_blank" rel="noopener">
+              <img
+                src="assets/linkedin.png"
+                alt="LinkedIn profile"
+                class="icon"
+              />
+            </a>
+            <a href="https://github.com/Mthize" target="_blank" rel="noopener">
+              <img src="assets/github.png" alt="GitHub profile" class="icon" />
+            </a>
+          </div>
+        </div>
       </section>
 
-      <!-- About me section with profile image and personal information -->
       <section id="about">
-        <h2>About Me</h2>
-        <h3>Thapelo M</h3>
-        <img src="assets/image.png" alt="photo" width="250" />
-        <p>
-          I am learning HTML, CSS, and JavaScript. I am building my skills in
-          web development and creating beginner friendly projects to improve my
-          coding knowledge.
-        </p>
-        <p>
-          I enjoy practicing the basics of coding and creating simple projects
-          that help me understand how websites are structured. My goal is to
-          keep improving and grow into a confident web developer.
-        </p>
-        <p>
-          This portfolio is one of the projects I am using to show my progress
-          and apply what I learn.
-        </p>
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+
+        <div class="section-container">
+          <div class="section__pic-container">
+            <video class="about-video" controls autoplay loop muted>
+              <source src="assets/code-edit.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="about-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <h3>Experience</h3>
+                <p>2+ years<br />Web Development</p>
+              </div>
+
+              <div class="details-container">
+                <h3>Education</h3>
+                <p>B.Sc. Bachelors Degree<br />CodeTribe Bootcomp</p>
+              </div>
+            </div>
+
+            <div class="text-container">
+              <p>
+                I am learning HTML, CSS, and JavaScript. I am building my skills in web
+                development and creating beginner friendly projects to improve my coding
+                knowledge. I enjoy practicing the basics of coding and creating simple
+                projects that help me understand how websites are structured. My goal is to
+                keep improving and grow into a confident web developer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#projects">
+          <img src="assets/arrow.png" alt="Arrow icon" class="icon arrow" />
+        </a>
       </section>
 
-      <!-- Contact section with email, phone, and address details -->
+      <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+
+        <div class="experience-details-container">
+          <div class="about-containers">
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img src="assets/Project1.png" alt="Project One" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title project-title">Project One</h2>
+              <div class="btn-container">
+                <button class="btn btn-color-2 project-btn">Github</button>
+                <button class="btn btn-color-2 project-btn">Live Demo</button>
+              </div>
+            </div>
+
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img src="assets/Project2.png" alt="Project Two" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title project-title">Project Two</h2>
+              <div class="btn-container">
+                <button class="btn btn-color-2 project-btn">Github</button>
+                <button class="btn btn-color-2 project-btn">Live Demo</button>
+              </div>
+            </div>
+
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img src="assets/Peoject3.png" alt="Project Three" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title project-title">Project Three</h2>
+              <div class="btn-container">
+                <button class="btn btn-color-2 project-btn">Github</button>
+                <button class="btn btn-color-2 project-btn">Live Demo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact">
+          <img src="assets/arrow.png" alt="Arrow icon" class="icon arrow" />
+        </a>
+      </section>
+
       <section id="contact">
-        <h2>Contact Us</h2>
-        <p>
-          If you would like to get in touch with me, you can use the contact
-          details below. I am open to learning opportunities, beginner projects,
-          and networking with other developers.
-        </p>
-        <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
-        <p>Phone: Available on request</p>
-        <p>Address: Johannesburg, South Africa</p>
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
+
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-color-1">Submit Message</button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <!-- Footer section with quick links, social links, and contact summary -->
     <footer>
-      <h2>Footer</h2>
-
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-
-      <h3>Social Media</h3>
-      <ul>
-        <li><a href="https://github.com/" target="_blank">GitHub</a></li>
-        <li>
-          <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-        </li>
-      </ul>
-
-      <h3>Contact Information</h3>
-      <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
-      <p>Phone: Available on request</p>
-      <p>Address: Johannesburg, South Africa</p>
-
-      <td width="33%" valign="top">
-        <h3>Map</h3>
-
-        <iframe
-          src="https://www.google.com/maps?q=Johannesburg,%20South%20Africa&output=embed"
-          width="400"
-          height="250"
-        >
-        </iframe>
-      </td>
-
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#profile">Home</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
       <p>&copy; 2026 Thapelo Portfolio. All rights reserved.</p>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -187,33 +187,35 @@ do {
 
 console.log("Node.js-friendly result: The number is greater than 10.");
 
-// Exercise 5: Do While Loops - prompt() guessing game example
-// The code below is commented out because prompt() does not work directly in Node.js.
-/*
+// Exercise 5: Do While Loops - Node.js readline guessing game
+// readline lets the user type input in the terminal when using Node.js.
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 const secretNumber = 7;
-let guess;
 
-do {
-  guess = Number(prompt("Guess the secret number:"));
-} while (guess !== secretNumber);
+function askGuess() {
+  rl.question("Guess a number between 1 and 10: ", function (answer) {
+    const guess = Number(answer);
 
-console.log("Correct guess!");
-*/
-
-// Exercise 5: Do While Loops - Node.js-friendly guessing game using fixed values
-const secretNumber = 7;
-const guesses = [3, 5, 7];
-let guessIndex = 0;
-let currentGuess;
-
-do {
-  currentGuess = guesses[guessIndex];
-  console.log("Current guess:", currentGuess);
-  guessIndex++;
-} while (currentGuess !== secretNumber && guessIndex < guesses.length);
-
-if (currentGuess === secretNumber) {
-  console.log("Node.js-friendly result: Correct guess!");
-} else {
-  console.log("Node.js-friendly result: Secret number was not guessed.");
+    if (guess === secretNumber) {
+      console.log("Correct guess!");
+      rl.close();
+    } else if (guess < secretNumber) {
+      console.log("Too low, try again.");
+      askGuess();
+    } else if (guess > secretNumber) {
+      console.log("Too high, try again.");
+      askGuess();
+    } else {
+      console.log("Please enter a valid number.");
+      askGuess();
+    }
+  });
 }
+
+askGuess();

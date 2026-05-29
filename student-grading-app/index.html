@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Grading App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+    <h1>Student Grading App</h1>
+    <p>Enter a student name and mark to check the result.</p>
+
+    <div class="form">
+      <input type="text" id="studentName" placeholder="Enter student name" />
+
+      <input type="number" id="studentMark" placeholder="Enter mark 0 - 100" />
+
+      <button id="submitBtn">Submit</button>
+    </div>
+
+    <div id="resultArea" class="result-area"></div>
+
+    <h2>Submitted Students</h2>
+    <ul id="studentList"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

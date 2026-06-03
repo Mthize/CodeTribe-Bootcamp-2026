@@ -470,6 +470,33 @@ section {
   width: fit-content;
 }
 
+.map-container {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: rgb(163, 163, 163) 0.1rem solid;
+  background: rgb(250, 250, 250);
+  box-sizing: border-box;
+}
+
+.map-container h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  color: black;
+}
+
+.map-container iframe {
+  width: 100%;
+  border-radius: 1rem;
+  border: rgb(163, 163, 163) 0.1rem solid;
+  display: block;
+}
+
 /* FOOTER SECTION */
 
 footer {
@@ -744,6 +771,16 @@ footer p {
 
   .arrow {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .map-container {
+    padding: 1.5rem;
+  }
+
+  .map-container iframe {
+    height: 250px;
   }
 }
 

@@ -65,12 +65,14 @@ console.log("");
 // Exercise 3: For Loops - Print numbers from 1 to 10
 console.log("Exercise 3: For Loops");
 console.log("Numbers from 1 to 10:");
+
 for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
 
 // Exercise 3: For Loops - Print all even numbers between 1 and 20
 console.log("Even numbers between 1 and 20:");
+
 for (let i = 1; i <= 20; i++) {
   if (i % 2 === 0) {
     console.log(i);
@@ -79,14 +81,18 @@ for (let i = 1; i <= 20; i++) {
 
 // Exercise 3: For Loops - Calculate the sum of all numbers from 1 to 100
 let forLoopSum = 0;
+
 for (let i = 1; i <= 100; i++) {
   forLoopSum += i;
 }
+
 console.log("Sum of numbers from 1 to 100:", forLoopSum);
 
 // Exercise 3: For Loops - Print each element in the array
 const numbersArray = [1, 2, 3, 4, 5];
+
 console.log("Elements in numbersArray:");
+
 for (let i = 0; i < numbersArray.length; i++) {
   console.log(numbersArray[i]);
 }
@@ -106,9 +112,11 @@ console.log("");
 
 // Exercise 4: While Loops - Print numbers from 1 to 10
 console.log("Exercise 4: While Loops");
+
 let whileCounter = 1;
 
 console.log("Numbers from 1 to 10:");
+
 while (whileCounter <= 10) {
   console.log(whileCounter);
   whileCounter++;
@@ -116,11 +124,14 @@ while (whileCounter <= 10) {
 
 // Exercise 4: While Loops - Print all even numbers between 1 and 20
 let evenCounter = 1;
+
 console.log("Even numbers between 1 and 20:");
+
 while (evenCounter <= 20) {
   if (evenCounter % 2 === 0) {
     console.log(evenCounter);
   }
+
   evenCounter++;
 }
 
@@ -137,7 +148,9 @@ console.log("Sum of numbers from 1 to 100:", whileLoopSum);
 
 // Exercise 4: While Loops - Print all multiples of 5 less than 50
 let multipleOfFive = 5;
+
 console.log("Multiples of 5 less than 50:");
+
 while (multipleOfFive < 50) {
   console.log(multipleOfFive);
   multipleOfFive += 5;
@@ -147,9 +160,11 @@ console.log("");
 
 // Exercise 5: Do While Loops - Print numbers from 1 to 10
 console.log("Exercise 5: Do While Loops");
+
 let doWhileCounter = 1;
 
 console.log("Numbers from 1 to 10:");
+
 do {
   console.log(doWhileCounter);
   doWhileCounter++;
@@ -187,35 +202,46 @@ do {
 
 console.log("Node.js-friendly result: The number is greater than 10.");
 
-// Exercise 5: Do While Loops - Node.js readline guessing game
-// readline lets the user type input in the terminal when using Node.js.
-const readline = require("readline");
+// Exercise 5: Do While Loops - prompt() guessing game example
+// The code below is commented out because prompt() does not work directly in Node.js.
+/*
+const secretNumber = 7;
+let guess;
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+do {
+  guess = Number(prompt("Guess the secret number:"));
+} while (guess !== secretNumber);
+
+console.log("Correct guess!");
+*/
+
+// Exercise 5: Do While Loops - Guessing game using user input
+// This version allows the user to type their own guess in the terminal.
+// First install readline-sync by running:
+// npm install readline-sync
+
+const readlineSync = require("readline-sync");
 
 const secretNumber = 7;
+let guess;
 
-function askGuess() {
-  rl.question("Guess a number between 1 and 10: ", function (answer) {
-    const guess = Number(answer);
+console.log("");
+console.log("Guessing Game");
+console.log("I am thinking of a number between 1 and 10.");
+console.log("Keep guessing until you get the correct number.");
 
-    if (guess === secretNumber) {
-      console.log("Correct guess!");
-      rl.close();
-    } else if (guess < secretNumber) {
-      console.log("Too low, try again.");
-      askGuess();
-    } else if (guess > secretNumber) {
-      console.log("Too high, try again.");
-      askGuess();
-    } else {
-      console.log("Please enter a valid number.");
-      askGuess();
-    }
-  });
-}
+do {
+  guess = parseInt(readlineSync.question("Enter your guess: "));
 
-askGuess();
+  if (isNaN(guess)) {
+    console.log("Please enter a valid number.");
+  } else if (guess < 1 || guess > 10) {
+    console.log("Please enter a number between 1 and 10.");
+  } else if (guess < secretNumber) {
+    console.log("Too low. Try again.");
+  } else if (guess > secretNumber) {
+    console.log("Too high. Try again.");
+  } else {
+    console.log("Correct guess!");
+  }
+} while (guess !== secretNumber);skGuess();

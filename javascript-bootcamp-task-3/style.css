@@ -1,0 +1,164 @@
+/* Basic page styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #222222;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  max-width: 760px;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.intro-text,
+.helper-text {
+  color: #555555;
+}
+
+.section-block {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfd6df;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-button {
+  width: 100%;
+  background-color: #1d72f3;
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background-color: #155bc2;
+}
+
+.secondary-button {
+  background-color: #1f8b4c;
+  color: #ffffff;
+}
+
+.secondary-button:hover {
+  background-color: #166738;
+}
+
+button:disabled {
+  background-color: #9aa4b2;
+  cursor: not-allowed;
+}
+
+.error-message {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  color: #c62828;
+  font-size: 14px;
+}
+
+.success-message {
+  min-height: 20px;
+  margin-top: 12px;
+  color: #1b7f3c;
+  font-weight: bold;
+}
+
+.invalid-input {
+  border: 1px solid #c62828;
+}
+
+.output-box,
+.student-list {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  border: 1px solid #dde4ec;
+}
+
+.output-box p,
+.student-card {
+  margin: 0 0 10px 0;
+}
+
+.student-card:last-child,
+.output-box p:last-child {
+  margin-bottom: 0;
+}
+
+.student-card {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dde4ec;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 18px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .checkbox-group {
+    align-items: flex-start;
+  }
+}
